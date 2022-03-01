@@ -56,24 +56,29 @@ body {
   display: flex;
   width: 1060px;
   margin: 0 auto;
+  position: relative;
 }
 
-.logo-img {
-  display: block;
-  margin-right: 40px;
-  position: relative;
+.logo-link {
+  position: absolute;
   z-index: 1;
+  top: 0;
+  left: 0;
 }
 
 .navigation-list {
   display: flex;
-  padding: 0;
+  padding-left: 169px;
   margin: 0;
   width: 345px;
   list-style-type: none;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+}
+
+.navigation-item {
+  position: relative;
 }
 
 .navigation-link {
@@ -83,6 +88,27 @@ body {
   color: black;
   background: white;
   text-decoration: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navigation-link:hover {
+  color: #756257;
+}
+
+.navigation-link:active {
+  color: rgba(117, 98, 87, 0.3);
+}
+
+.page-current::before {
+  content: "";
+  position: absolute;
+  top: 46px;
+  left: 0;
+  height: 2px;
+  background-color: #756257;
+  width: 100%;
+  z-index: 1;
 }
 
 .navigation-list-user {
@@ -97,21 +123,53 @@ body {
   flex-wrap: wrap;
 }
 
+.navigation-item-user:last-child {
+  padding-left: 20px;
+}
+
 .navigation-link-user {
   min-width: 18px;
   min-height: 18px;
   display: block;
-  box-sizing: border-box;
+  position: relative;
+  padding: 24px 12px;
 }
 
-.navigation-link-search {
-  padding-top: 23px;
-  margin-right: 22px;
+.navigation-link-user:hover .navigation-icon {
+  fill: #756257;
 }
 
-.navigation-link-favorites {
-  padding-top: 15px;
-  margin-right: 18px;
+.navigation-link-user:active .navigation-icon {
+  fill: rgba(117, 98, 87, 0.3);
+}
+
+.navigation-link-favorites::after {
+  position: absolute;
+  content: "12";
+  background-color: #7db54f;
+  border-radius: 10px;
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 400;
+  color: white;
+  width: 20px;
+  height: 20px;
+  top: 15px;
+  left: 25px;
+}
+
+.navigation-link-favorites:active::after {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.navigation-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #333;
 }
 
 .navigation-link-button {
@@ -129,6 +187,21 @@ body {
   box-sizing: border-box;
   font-weight: 700;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.navigation-link-button:hover {
+  background: #615048;
+}
+
+.navigation-link-button:active {
+  color: rgba(255, 255, 255, 0.3);
+  background: #615048;
+}
+
+.navigation-link-button:focus-visible {
+  background: #615048;
+  outline: 3px solid #83b3d3;
 }
 
 .navigation-item-button {
@@ -139,6 +212,16 @@ body {
   background-image: url(../images/main-caption/main-caption-background.jpg);
   background-repeat: no-repeat;
   padding-bottom: 77px;
+  position: relative;
+}
+
+.main-img-wrapper::after {
+  content: url(../images/main-caption/main-caption-triangles.svg);
+  position: absolute;
+  width: 1200px;
+  height: 57px;
+  bottom: 0px;
+  left: 0;
 }
 
 .main-caption {
@@ -208,6 +291,7 @@ body {
   color: white;
   margin: 0 auto;
   width: 250px;
+  text-align: center;
 }
 
 .dark-blue-background .advantages-description {
@@ -219,9 +303,25 @@ body {
   flex-wrap: wrap;
 }
 
-.recommendation-img {
-  margin-top: 89px;
-  margin-bottom: 23px;
+.recommendation-housing {
+  background-image: url(../images/icons/recommendation/housing.svg);
+  background-repeat: no-repeat;
+  background-size: 75px 72px;
+  background-position: center 89px;
+}
+
+.recommendation-eating {
+  background-image: url(../images/icons/recommendation/eating.svg);
+  background-repeat: no-repeat;
+  background-size: 74px 70px;
+  background-position: center 91px;
+}
+
+.recommendation-souvenir {
+  background-image: url(../images/icons/recommendation/souvenir.svg);
+  background-repeat: no-repeat;
+  background-size: 64px 76px;
+  background-position: center 85px;
 }
 
 .recommendation-title {
@@ -231,6 +331,7 @@ body {
   margin-top: 0;
   margin-bottom: 20px;
   text-transform: uppercase;
+  padding-top: 184px;
 }
 
 .recommendation-description {
@@ -281,7 +382,7 @@ body {
 .search-text {
   font-size: 22px;
   line-height: 26px;
-  width: 720px;
+  width: 780px;
   margin: 0 auto 56px;
 }
 
@@ -299,13 +400,28 @@ body {
   display: inline-block;
   padding-top: 12px;
   padding-bottom: 12px;
+  cursor: pointer;
+}
+
+.main-link:hover {
+  background: #615048;
+}
+
+.main-link:active {
+  color: rgba(255, 255, 255, 0.3);
+  background: #615048;
+}
+
+.main-link:focus-visible {
+  background: #615048;
+  outline: 3px solid #83b3d3;
 }
 
 .subscribe {
   color: white;
   background-image: url(../images/subscribe-background.jpg);
   background-repeat: no-repeat;
-  padding-bottom: 92px;
+  padding-bottom: 94px;
 }
 
 .subscribe-offer {
@@ -323,7 +439,7 @@ body {
   font-size: 22px;
   line-height: 26px;
   width: 520px;
-  margin: 0 auto 46px;
+  margin: 0 auto 44px;
 }
 
 .newsletter-form {
@@ -338,8 +454,25 @@ body {
   font-family: inherit;
   padding-left: 22px;
   border: 0;
-  width: 600px;
+  width: 578px;
   height: 60px;
+  background: #f2f2f2;
+  outline: none;
+}
+
+.newsletter-field-error {
+  background: #fff;
+  outline: 2px solid #ff5757;
+  z-index: 1;
+}
+
+.newsletter-field:hover {
+  background: #e5e5e5;
+}
+
+.newsletter-field:focus {
+  outline: 3px solid #83b3d3;
+  background: #e5e5e5;
 }
 
 .newsletter-button {
@@ -354,6 +487,21 @@ body {
   width: 200px;
   color: white;
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+.newsletter-button:hover {
+  background: #68a2ca;
+}
+
+.newsletter-button:focus-visible {
+  outline: 3px solid #756257;
+  background: #68a2ca;
+}
+
+.newsletter-button:active {
+  background: #68a2ca;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .footer-container {
@@ -362,9 +510,8 @@ body {
 }
 
 .social-logos {
-  padding: 49px 0 0 72px;
-  margin-top: 0;
-  margin-right: 61px;
+  padding: 41px 0 0 64px;
+  margin: 0 235px 45px 0;
   width: 107px;
 }
 
@@ -372,31 +519,120 @@ body {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: start;
+  width: 150px;
   padding: 0;
   margin: 0;
-  justify-content: space-around;
+}
+
+.social-item {
+  margin-right: 10px;
+}
+
+.social-item:last-child {
+  margin-right: 0;
 }
 
 .social-link {
-  display: flex;
+  position: relative;
+  display: block;
+  height: 34px;
+  width: 34px;
+  border-radius: 3px;
+}
+
+.social-link:focus-visible {
+  outline: 3px solid #68a2ca;
+}
+
+.social-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #83b3d3;
+}
+
+.social-link:hover .social-icon {
+  fill: #68a2ca;
+}
+
+.social-link:focus-visible .social-icon {
+  fill: #68a2ca;
+}
+
+.social-link:active .social-icon {
+  fill: #68a2ca;
+  opacity: 30%;
 }
 
 .phone {
-  width: 720px;
+  width: 361px;
   font-size: 40px;
+  font-weight: 400;
   line-height: 40px;
   color: black;
   background: white;
-  padding-top: 40px;
-  margin-right: 53px;
+  padding: 15px;
   text-decoration: none;
-  margin-bottom: 40px;
+  align-self: center;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+  text-transform: uppercase;
+  margin-right: 195px;
+}
+
+.phone:hover {
+  color: #756257;
+}
+
+.phone:focus-visible {
+  color: #756257;
+  outline: 3px solid #83b3d3;
+}
+
+.phone:active {
+  color: #756257;
+  opacity: 30%;
 }
 
 .htmlacademy-link {
-  padding-top: 42px;
-  margin-right: 72px;
-  margin-left: auto;
+  display: block;
+  position: relative;
+  width: 154px;
+  height: 64px;
+  margin-top: 25px;
+  border-radius: 3px;
+}
+
+.htmlacademy-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  fill: #000;
+}
+
+.htmlacademy-link:hover .htmlacademy-icon {
+  fill: #756257;
+}
+
+.htmlacademy-link:focus-visible {
+  outline: 3px solid #68a2ca;
+}
+
+.htmlacademy-link:focus-visible .htmlacademy-icon {
+  fill: #756257;
+}
+
+.htmlacademy-link:active .htmlacademy-icon {
+  fill: #756257;
+  opacity: 30%;
 }
 
 /* catalog.html  */
@@ -518,6 +754,7 @@ body {
   padding-bottom: 13px;
   border-radius: 4px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .form-reset {
@@ -531,6 +768,7 @@ body {
   color: white;
   border: none;
   padding: 0;
+  cursor: pointer;
 }
 
 .form-result {
@@ -639,6 +877,7 @@ body {
   font-family: inherit;
   padding-top: 9px;
   padding-bottom: 10px;
+  cursor: pointer;
 }
 
 .hotels-button-info {
@@ -697,6 +936,7 @@ body {
   padding-bottom: 17px;
   text-transform: uppercase;
   border: none;
+  cursor: pointer;
 }
 
 .pagination-wrapper {
@@ -733,6 +973,7 @@ body {
   padding: 15px 15px;
   box-sizing: border-box;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .pagination-actual {
