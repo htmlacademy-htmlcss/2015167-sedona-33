@@ -63,39 +63,29 @@
                 <a class="breadcrumbs-link breadcrumbs-catalog" href="#">Гостиницы</a>
              </li>
           </ul>
-          <form
-            class="form-inner"
-            action="https://echo.htmlacademy.ru/"
-            method="post"
-          >
+          <form class="form-inner" action="https://echo.htmlacademy.ru/" method="post">
             <fieldset class="form-fieldset checkbox-wrapper">
               <legend class="form-legend">Инфраструктура:</legend>
               <ul class="form-list">
                 <li class="form-item">
                   <label class="form-label">
-                    <input
-                      class="form-checkbox"
-                      type="checkbox"
-                      name="Бассейн"
-                      checked
-                    />
-                    Бассейн
+                    <input class="control-input visually-hidden" type="checkbox" name="Бассейн" checked/>
+                    <span class="checkbox-mark"></span>
+                    <span class="span-title">Бассейн</span>
                   </label>
                 </li>
                 <li class="form-item">
                   <label class="form-label">
-                    <input
-                      class="form-checkbox"
-                      type="checkbox"
-                      name="Парковка"
-                      checked
-                    />Парковка
+                    <input class="control-input visually-hidden" type="checkbox" name="Парковка" checked/>
+                    <span class="checkbox-mark"></span>
+                    <span class="span-title">Парковка</span>
                   </label>
                 </li>
                 <li class="form-item">
                   <label class="form-label">
-                    <input class="form-checkbox" type="checkbox" name="Wi-fi" />
-                    Wi-fi
+                    <input class="control-input visually-hidden" type="checkbox" name="Wi-fi"/>
+                    <span class="checkbox-mark"></span>
+                    <span class="span-title">Wi-Fi</span>
                   </label>
                 </li>
               </ul>
@@ -105,28 +95,45 @@
               <ul class="form-list">
                 <li class="form-item">
                   <label class="form-label">
-                    <input
-                      class="form-radio"
-                      type="radio"
-                      name="Гостиница"
-                      checked
-                    />
-                    Гостиница
+                    <input class="control-input visually-hidden" type="radio" name="Гостиница" checked/>
+                    <span class="radio-mark"></span>
+                    <span class="span-title">Гостиница</span>
                   </label>
                 </li>
                 <li class="form-item">
                   <label class="form-label">
-                    <input class="form-radio" type="radio" name="Мотель" />
-                    Мотель
+                    <input class="control-input visually-hidden" type="radio" name="Мотель"/>
+                    <span class="radio-mark"></span>
+                    <span class="span-title">Мотель</span>
                   </label>
                 </li>
                 <li class="form-item">
                   <label class="form-label">
-                    <input class="form-radio" type="radio" name="Апартаменты" />
-                    Апартаменты
+                    <input class="control-input visually-hidden" type="radio" name="Апартаменты"/>
+                    <span class="radio-mark"></span>
+                    <span class="span-title">Апартаменты</span>
                   </label>
                 </li>
               </ul>
+            </fieldset>
+            <fieldset class="form-fieldset range-wrapper">
+              <legend class="form-legend">Стоимость, ₽:</legend>
+              <div class="range-wrapper-inputs">
+                <label class="inputs-label inputs-label-min">
+                  <input class="range-input range-input-min" type="number" value="0" name="min-price">
+                </label>
+                <label class="inputs-label inputs-label-max">
+                  <input class="range-input range-input-max" type="number" value="9000" name="max-price">
+                </label>
+              </div>
+              <div class="range">
+                 <div class="range-scale">
+                   <div class="range-bar" style="left:0px; width: 216px">
+                     <button class="range-toggle toggle-min" type="button"></button>
+                     <button class="range-toggle toggle-max" type="button"></button>
+                   </div>
+                 </div>
+              </div>
             </fieldset>
             <fieldset class="form-fieldset button-wrapper">
               <button class="form-submit" type="submit">Применить</button>
@@ -265,7 +272,7 @@
                 >Гостиниц на странице:</label
               >
               <select class="select-control" id="quantity-results">
-                <option value="4">4</option>
+                <option class="select-arrow" value="4">4</option>
               </select>
             </div>
           </div>
